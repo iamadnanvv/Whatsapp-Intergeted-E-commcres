@@ -132,8 +132,8 @@
           <details>
             <summary>What payment options are available?</summary>
             <p>
-              We support Cash on Delivery and UPI payments after order confirmation
-              on WhatsApp.
+              We support WhatsApp Pay, UPI, and Cash on Delivery after order
+              confirmation on WhatsApp.
             </p>
           </details>
           <details>
@@ -145,6 +145,59 @@
         </div>
       </section>
     </main>
+
+    <section id="orderModal" class="order-modal" aria-hidden="true">
+      <div class="order-sheet">
+        <button id="closeModal" class="close-modal" type="button" aria-label="Close order form">✕</button>
+        <p class="tag">COMPLETE YOUR ORDER</p>
+        <h3 id="modalProductTitle">Ho-Yo Tee</h3>
+        <p class="order-note">
+          Fill in your details and continue to WhatsApp for confirmation and payment.
+        </p>
+
+        <form id="orderForm" class="order-form">
+          <label>
+            Full Name
+            <input type="text" name="customerName" required />
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" name="customerPhone" required />
+          </label>
+          <label>
+            Size
+            <select name="size" id="modalSize" required></select>
+          </label>
+          <label>
+            Quantity
+            <input type="number" name="quantity" min="1" value="1" required />
+          </label>
+          <label>
+            Address Line
+            <input type="text" name="addressLine" required />
+          </label>
+          <div class="split">
+            <label>
+              City
+              <input type="text" name="city" required />
+            </label>
+            <label>
+              Pincode
+              <input type="text" name="pincode" required />
+            </label>
+          </div>
+          <label>
+            Payment Method
+            <select name="paymentMethod" required>
+              <option value="WhatsApp Pay">WhatsApp Pay</option>
+              <option value="UPI">UPI</option>
+              <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+          </label>
+          <button type="submit" class="buy-btn">Continue on WhatsApp</button>
+        </form>
+      </div>
+    </section>
 
     <a class="sticky-wa" href="#products" aria-label="Order on WhatsApp">
       Order on WhatsApp

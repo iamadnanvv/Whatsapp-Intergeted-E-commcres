@@ -65,12 +65,48 @@ const products = [
 
 const formatPrice = (value) => `₹${value.toLocaleString("en-IN")}`;
 
-const buildWhatsAppLink = ({ name, size, price }) => {
-  const message = `Hi Ho-Yo 👋 I want to order:\nProduct: ${name}\nSize: ${size}\nPrice: ${formatPrice(
-    price
-  )}\nPlease confirm availability and delivery details.`;
+const buildWhatsAppLink = (order) => {
+  const total = order.price * order.quantity;
+  const message = `Hi Ho-Yo 👋 I want to place an order:
+Product: ${order.name}
+Size: ${order.size}
+Quantity: ${order.quantity}
+Unit Price: ${formatPrice(order.price)}
+Total: ${formatPrice(total)}
+
+Customer Name: ${order.customerName}
+Phone: ${order.customerPhone}
+Address: ${order.addressLine}, ${order.city} - ${order.pincode}
+Payment Method: ${order.paymentMethod}
+
+Please confirm availability, shipping ETA, and payment collection on WhatsApp.`;
 
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+};
+
+const orderModal = document.querySelector("#orderModal");
+const modalProductTitle = document.querySelector("#modalProductTitle");
+const modalSize = document.querySelector("#modalSize");
+const closeModal = document.querySelector("#closeModal");
+const orderForm = document.querySelector("#orderForm");
+let selectedProduct = null;
+
+const openOrderModal = (product, chosenSize) => {
+  selectedProduct = product;
+  modalProductTitle.textContent = `${product.name} • ${formatPrice(product.price)}`;
+  modalSize.innerHTML = product.sizes
+    .map(
+      (size) =>
+        `<option value="${size}" ${size === chosenSize ? "selected" : ""}>${size}</option>`
+    )
+    .join("");
+  orderModal.classList.add("active");
+  orderModal.setAttribute("aria-hidden", "false");
+};
+
+const hideOrderModal = () => {
+  orderModal.classList.remove("active");
+  orderModal.setAttribute("aria-hidden", "true");
 };
 
 const createProductCard = (product) => {
@@ -99,13 +135,7 @@ const createProductCard = (product) => {
   const buyButton = card.querySelector(".buy-btn");
 
   buyButton.addEventListener("click", () => {
-    const selectedSize = sizeSelect.value;
-    const waLink = buildWhatsAppLink({
-      name: product.name,
-      size: selectedSize,
-      price: product.price,
-    });
-    window.open(waLink, "_blank", "noopener,noreferrer");
+    openOrderModal(product, sizeSelect.value);
   });
 
   return card;
@@ -133,5 +163,36 @@ const setupReveal = () => {
   revealItems.forEach((item) => observer.observe(item));
 };
 
+const setupOrderForm = () => {
+  closeModal.addEventListener("click", hideOrderModal);
+  orderModal.addEventListener("click", (event) => {
+    if (event.target === orderModal) hideOrderModal();
+  });
+
+  orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!selectedProduct) return;
+
+    const formData = new FormData(orderForm);
+    const order = {
+      name: selectedProduct.name,
+      price: selectedProduct.price,
+      size: formData.get("size"),
+      quantity: Number(formData.get("quantity")),
+      customerName: formData.get("customerName"),
+      customerPhone: formData.get("customerPhone"),
+      addressLine: formData.get("addressLine"),
+      city: formData.get("city"),
+      pincode: formData.get("pincode"),
+      paymentMethod: formData.get("paymentMethod"),
+    };
+    const waLink = buildWhatsAppLink(order);
+    window.open(waLink, "_blank", "noopener,noreferrer");
+    hideOrderModal();
+    orderForm.reset();
+  });
+};
+
 renderProducts();
 setupReveal();
+setupOrderForm();
