@@ -3,152 +3,241 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ho-Yo Streetwear | Order via WhatsApp</title>
     <meta
       name="description"
-      content="Shop Ho-Yo streetwear t-shirts and place your order instantly on WhatsApp."
+      content="Khamaruzz Naadan Achaar brings authentic Kerala homemade pickles crafted in small batches. Order directly on WhatsApp."
     />
+    <title>Khamaruzz Naadan Achaar | Authentic Kerala Homemade Pickles</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <a href="#hero" class="logo">HO-YO</a>
-      <nav>
-        <a href="#products">Shop</a>
-        <a href="#collections">Collections</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
+    <header class="site-header" id="top">
+      <nav class="container nav" aria-label="Primary">
+        <a class="brand" href="#home">
+          <span class="brand-logo" aria-hidden="true">🍯</span>
+          <span>
+            <strong>Khamaruzz Naadan Achaar</strong>
+            <small>Authentic Kerala Homemade Pickles</small>
+          </span>
+        </a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">☰</button>
+        <div class="nav-links" id="mobile-menu">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+          <a class="icon-link" href="https://www.instagram.com/khamaruzz.nadan.acharr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
+          <a class="btn btn-primary" href="https://wa.me/919645778508?text=Hi%2C%20I%20would%20like%20to%20order%20your%20homemade%20pickles." target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+        </div>
       </nav>
-      <a class="header-cta" href="#products">Order on WhatsApp</a>
     </header>
 
     <main>
-      <section id="hero" class="hero section-wrap">
-        <div class="hero-content reveal">
-          <p class="tag">GEN-Z STREETWEAR DROP</p>
-          <h1>Wear Loud. Move Free. Own Your Vibe.</h1>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Premium Kerala Flavours</p>
+            <h1>Authentic Kerala Homemade Pickles</h1>
+            <p>
+              Handcrafted in small batches with treasured family recipes, fresh ingredients,
+              and the rich soul of Kerala in every jar.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://wa.me/919645778508?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/khamaruzz.nadan.acharr/" target="_blank" rel="noopener noreferrer">📸 Follow on Instagram</a>
+            </div>
+            <div class="trust-badges" role="list" aria-label="Trust badges">
+              <span role="listitem">Homemade with Love</span>
+              <span role="listitem">No Preservatives</span>
+              <span role="listitem">Traditional Recipe</span>
+            </div>
+          </div>
+          <div class="hero-image" role="img" aria-label="Premium Kerala pickle jars with spices and ingredients"></div>
+        </div>
+      </section>
+
+      <section class="section" id="products">
+        <div class="container">
+          <h2>Our Signature Pickles</h2>
+          <p class="section-sub">Choose your favorite and order instantly on WhatsApp.</p>
+          <div class="product-grid">
+            <article class="card product-card" data-product="Mango Pickle">
+              <img src="mango.png" alt="Mango Pickle" loading="lazy" />
+              <h3>Mango Pickle</h3>
+              <p>Bold, tangy Kerala-style mango pickle with authentic spice blend.</p>
+              <label>
+                Select Size
+                <select class="size-select">
+                  <option value="250g" data-price="149">250g</option>
+                  <option value="500g" data-price="249">500g</option>
+                  <option value="1kg" data-price="499">1kg</option>
+                </select>
+              </label>
+              <p class="price" aria-live="polite">₹149</p>
+              <a class="btn btn-primary order-btn" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </article>
+
+            <article class="card product-card" data-product="Garlic Pickle">
+              <img src="garlic.png" alt="Garlic Pickle" loading="lazy" />
+              <h3>Garlic Pickle</h3>
+              <p>Rich and aromatic garlic pickle made in traditional Kerala style.</p>
+              <label>
+                Select Size
+                <select class="size-select">
+                  <option value="250g" data-price="169">250g</option>
+                  <option value="500g" data-price="299">500g</option>
+                  <option value="1kg" data-price="549">1kg</option>
+                </select>
+              </label>
+              <p class="price" aria-live="polite">₹169</p>
+              <a class="btn btn-primary order-btn" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </article>
+
+            <article class="card product-card" data-product="Chilli Pickle">
+              <img src="chilli.png" alt="Chilli Pickle" loading="lazy" />
+              <h3>Chilli Pickle</h3>
+              <p>Fiery and flavorful chilli pickle crafted for spice lovers.</p>
+              <label>
+                Select Size
+                <select class="size-select">
+                  <option value="250g" data-price="199">250g</option>
+                  <option value="500g" data-price="349">500g</option>
+                  <option value="1kg" data-price="649">1kg</option>
+                </select>
+              </label>
+              <p class="price" aria-live="polite">₹199</p>
+              <a class="btn btn-primary order-btn" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="about">
+        <div class="container narrow">
+          <h2>A Mother’s Dream, Made Real</h2>
           <p>
-            Ho-Yo is built for bold fits and everyday flex. Pick your tee,
-            choose your size, and lock in your order through WhatsApp in seconds.
+            Khamaruzz Naadan Achaar began as the dream of a housewife who believed in the
+            extraordinary skill she learned from her mother and perfected through years of
+            experience. What started as a cherished family tradition has now become a brand that
+            brings authentic Kerala homemade pickles to families everywhere.
           </p>
-          <a href="#products" class="btn-primary">Order on WhatsApp</a>
-        </div>
-        <div class="hero-cards reveal">
-          <article>
-            <h3>Oversized Energy</h3>
-            <p>Relaxed silhouettes for all-day comfort and drip.</p>
-          </article>
-          <article>
-            <h3>Graphic Heat</h3>
-            <p>Statement prints designed to stand out in every crowd.</p>
-          </article>
-          <article>
-            <h3>Minimal Core</h3>
-            <p>Sharp basics for clean, confident fits.</p>
-          </article>
         </div>
       </section>
 
-      <section id="products" class="section-wrap">
-        <div class="section-head reveal">
-          <p class="tag">HOT RIGHT NOW</p>
-          <h2>Product Showcase</h2>
-          <p>Tap a style, select size, and send your order directly on WhatsApp.</p>
-        </div>
-        <div id="productGrid" class="product-grid"></div>
-      </section>
-
-      <section id="collections" class="section-wrap">
-        <div class="section-head reveal">
-          <p class="tag">SHOP BY MOOD</p>
-          <h2>Collections</h2>
-        </div>
-        <div class="collections-grid reveal">
-          <article>
-            <h3>Oversized Tees</h3>
-            <p>Drop-shoulder fits, breathable cotton, maximum comfort.</p>
-          </article>
-          <article>
-            <h3>Graphic Prints</h3>
-            <p>Urban visuals and bold typography that demand attention.</p>
-          </article>
-          <article>
-            <h3>Minimal Basics</h3>
-            <p>Clean essentials for layering or rocking solo.</p>
-          </article>
+      <section class="section" id="why-us">
+        <div class="container">
+          <h2>Why Choose Us</h2>
+          <div class="features-grid">
+            <div class="card">Traditional Family Recipes</div>
+            <div class="card">Homemade in Small Batches</div>
+            <div class="card">No Artificial Preservatives</div>
+            <div class="card">Fresh, High-Quality Ingredients</div>
+            <div class="card">Authentic Kerala Taste</div>
+            <div class="card">WhatsApp Ordering Convenience</div>
+          </div>
         </div>
       </section>
 
-      <section id="about" class="section-wrap about reveal">
-        <p class="tag">THE HO-YO STORY</p>
-        <h2>Streetwear for the self-made generation.</h2>
-        <p>
-          Ho-Yo started with one idea: make premium-feel tees that fit the pace,
-          creativity, and confidence of modern youth culture. From campus to
-          concerts, every piece is designed to feel effortless and look iconic.
-        </p>
-      </section>
-
-      <section id="reviews" class="section-wrap">
-        <div class="section-head reveal">
-          <p class="tag">SOCIAL PROOF</p>
-          <h2>Customer Reviews</h2>
-        </div>
-        <div class="review-grid">
-          <article class="review reveal">
-            <p>“Quality feels premium and the WhatsApp order flow was super quick.”</p>
-            <h4>— Aanya, Mumbai</h4>
-          </article>
-          <article class="review reveal">
-            <p>“The oversized fit is perfect. Ordered in 2 mins on chat.”</p>
-            <h4>— Rohan, Pune</h4>
-          </article>
-          <article class="review reveal">
-            <p>“Got exactly what I selected. Smooth confirmation and COD delivery.”</p>
-            <h4>— Kunal, Delhi</h4>
-          </article>
+      <section class="section alt" id="instagram">
+        <div class="container narrow center">
+          <p class="insta-icon" aria-hidden="true">📸</p>
+          <h2>Follow us on Instagram</h2>
+          <p>Follow us for behind-the-scenes updates, customer reviews, and new product launches.</p>
+          <a class="btn btn-secondary" href="https://www.instagram.com/khamaruzz.nadan.acharr/" target="_blank" rel="noopener noreferrer">Follow @khamaruzz.nadan.acharr</a>
         </div>
       </section>
 
-      <section id="faq" class="section-wrap faq">
-        <div class="section-head reveal">
-          <p class="tag">NEED HELP?</p>
-          <h2>FAQ</h2>
+      <section class="section" id="contact">
+        <div class="container">
+          <h2>Contact & Order Form</h2>
+          <form id="whatsapp-form" class="card form-grid">
+            <label>Full Name<input type="text" name="name" required /></label>
+            <label>Phone Number<input type="tel" name="phone" required /></label>
+            <label>Select Product
+              <select name="product" required>
+                <option value="Mango Pickle">Mango Pickle</option>
+                <option value="Garlic Pickle">Garlic Pickle</option>
+                <option value="Chilli Pickle">Chilli Pickle</option>
+              </select>
+            </label>
+            <label>Select Size
+              <select name="size" required>
+                <option value="250g">250g</option>
+                <option value="500g">500g</option>
+                <option value="1kg">1kg</option>
+              </select>
+            </label>
+            <label class="full">Delivery Address<textarea name="address" rows="3" required></textarea></label>
+            <label class="full">Additional Notes<textarea name="notes" rows="3"></textarea></label>
+            <button class="btn btn-primary full" type="submit">Send Order on WhatsApp</button>
+          </form>
         </div>
-        <div class="faq-list reveal">
-          <details>
-            <summary>How do I place an order?</summary>
-            <p>
-              Choose your tee and size, hit “Buy via WhatsApp”, then confirm your
-              shipping details in chat.
-            </p>
-          </details>
-          <details>
-            <summary>What payment options are available?</summary>
-            <p>
-              We support Cash on Delivery and UPI payments after order confirmation
-              on WhatsApp.
-            </p>
-          </details>
-          <details>
-            <summary>How long does delivery take?</summary>
-            <p>
-              Most orders arrive within 3-7 business days depending on your city.
-            </p>
-          </details>
+      </section>
+
+      <section class="section alt" id="testimonials">
+        <div class="container">
+          <h2>What Customers Say</h2>
+          <div class="testimonial-grid">
+            <article class="card"><p>★★★★★</p><p>“Truly tastes like home. Mango pickle is outstanding!”</p><small>— Nabeela K.</small></article>
+            <article class="card"><p>★★★★★</p><p>“Beautiful packaging and authentic Kerala flavor.”</p><small>— Faisal M.</small></article>
+            <article class="card"><p>★★★★★</p><p>“Ordered on WhatsApp and got fast response. Highly recommend.”</p><small>— Diya R.</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container narrow">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <details><summary>How long do the pickles last?</summary><p>Our pickles generally last for several months when stored in a clean, dry container and refrigerated after opening.</p></details>
+            <details><summary>Do you use preservatives?</summary><p>No. We focus on natural ingredients and traditional preparation without artificial preservatives.</p></details>
+            <details><summary>How do I place an order?</summary><p>Select your product and size, or fill the order form, then continue directly to WhatsApp to confirm your order.</p></details>
+            <details><summary>How is delivery handled?</summary><p>Delivery details and charges are shared during WhatsApp confirmation based on your location.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-final">
+        <div class="container center narrow">
+          <h2>Bring Home the Authentic Taste of Kerala</h2>
+          <p>Freshly prepared, lovingly packed, and ready to reach your doorstep.</p>
+          <div class="cta-row center">
+            <a class="btn btn-primary" href="https://wa.me/919645778508?text=Hi%2C%20I%20want%20to%20order%20Khamaruzz%20Naadan%20Achaar%20pickles." target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/khamaruzz.nadan.acharr/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+          </div>
         </div>
       </section>
     </main>
 
-    <a class="sticky-wa" href="#products" aria-label="Order on WhatsApp">
-      Order on WhatsApp
-    </a>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Khamaruzz Naadan Achaar</h3>
+          <p>Authentic Kerala homemade pickles crafted with heritage, heart, and purity.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>📱 <a href="https://wa.me/919645778508" target="_blank" rel="noopener noreferrer">+91 9645778508</a></p>
+          <p>📸 <a href="https://www.instagram.com/khamaruzz.nadan.acharr/" target="_blank" rel="noopener noreferrer">Instagram Profile</a></p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <p class="copy">© 2026 Khamaruzz Naadan Achaar. All rights reserved.</p>
+    </footer>
+
+    <a class="floating-wa" href="https://wa.me/919645778508?text=Hi%2C%20I%20want%20to%20order%20pickles." target="_blank" rel="noopener noreferrer" aria-label="Order on WhatsApp">💬</a>
 
     <script src="script.js"></script>
   </body>
